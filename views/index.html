@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1> 
+        Score: <span id = "score">0</span>
+      </h1>
+      <p>
+      click power = <span id = "clickPower">1</span> 
+      </p>
+      <button id = "Clicker" onclick="addToScore(clickPower)">Click Me!</button>
+      <img src = "images/catimage.png" height="256 px" width="256 px">
+      <button id = "Upgrade" onclick="upgradeClickPower()">Upgrade  Cost:<span id = "upgradeCost">25</span></button>
+    </div>
+    <script>
+      let score = 0;
+      let clickPower = 1;
+      let upgradeCost = 25;
+
+      function addToScore(clickPower)
+      {
+        score += clickPower;
+        document.getElementById("score").innerHTML = score;
+      }
+      function upgradeClickPower()
+      {
+        if(score >= upgradeCost)
+        {
+          score -= upgradeCost;
+          clickPower++;
+          document.getElementById("clickPower").innerHTML = clickPower;
+        }
+      }
+
+      
+      //class autoClicker 
+      //{
+      //  constructor(clickPower, clicksPerSecond, timeBetweenEachClick) {
+        //   let clickPower = this.clickPower;
+        //   let clicksPerSecond = this.clicksPerSecond;
+        //   let timeBetweenEachClick = this.timeBetweenEachClick;
+        // }
+      //}
+    </script>
+  </body>
+</html>
